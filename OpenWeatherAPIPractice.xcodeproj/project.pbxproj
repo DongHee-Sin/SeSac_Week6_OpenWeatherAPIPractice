@@ -22,6 +22,8 @@
 		D073AA8228A781F400DFABDD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D073AA8128A781F400DFABDD /* Kingfisher */; };
 		D073AA8428A7823900DFABDD /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA8328A7823900DFABDD /* EndPoint.swift */; };
 		D073AA8728A7833800DFABDD /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA8628A7833800DFABDD /* OpenWeather.swift */; };
+		D0F9863228A7CFCE00A40804 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D0F9863128A7CFCE00A40804 /* JGProgressHUD */; };
+		D0F9863428A7E04E00A40804 /* NaverGeocoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F9863328A7E04E00A40804 /* NaverGeocoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		D073AA7628A7792900DFABDD /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		D073AA8328A7823900DFABDD /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		D073AA8628A7833800DFABDD /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
+		D0F9863328A7E04E00A40804 /* NaverGeocoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverGeocoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F9863228A7CFCE00A40804 /* JGProgressHUD in Frameworks */,
 				D073AA8228A781F400DFABDD /* Kingfisher in Frameworks */,
 				D073AA7F28A781E400DFABDD /* SwiftyJSON in Frameworks */,
 				D073AA7C28A781D900DFABDD /* Alamofire in Frameworks */,
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D073AA8628A7833800DFABDD /* OpenWeather.swift */,
+				D0F9863328A7E04E00A40804 /* NaverGeocoding.swift */,
 			);
 			path = "Model-Manager";
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				D073AA7B28A781D900DFABDD /* Alamofire */,
 				D073AA7E28A781E400DFABDD /* SwiftyJSON */,
 				D073AA8128A781F400DFABDD /* Kingfisher */,
+				D0F9863128A7CFCE00A40804 /* JGProgressHUD */,
 			);
 			productName = OpenWeatherAPIPractice;
 			productReference = D073AA5028A7682900DFABDD /* OpenWeatherAPIPractice.app */;
@@ -184,6 +190,7 @@
 				D073AA7A28A781D900DFABDD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				D073AA7D28A781E400DFABDD /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				D073AA8028A781F400DFABDD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D0F9863028A7CFCE00A40804 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = D073AA5128A7682900DFABDD /* Products */;
 			projectDirPath = "";
@@ -220,6 +227,7 @@
 				D073AA6928A76A8100DFABDD /* OpenWeatherViewController.swift in Sources */,
 				D073AA8428A7823900DFABDD /* EndPoint.swift in Sources */,
 				D073AA8728A7833800DFABDD /* OpenWeather.swift in Sources */,
+				D0F9863428A7E04E00A40804 /* NaverGeocoding.swift in Sources */,
 				D073AA6C28A76ABE00DFABDD /* CommonSettingProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +472,14 @@
 				kind = branch;
 			};
 		};
+		D0F9863028A7CFCE00A40804 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -481,6 +497,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D073AA8028A781F400DFABDD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		D0F9863128A7CFCE00A40804 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0F9863028A7CFCE00A40804 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

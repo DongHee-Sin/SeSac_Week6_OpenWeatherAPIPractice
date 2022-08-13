@@ -8,7 +8,9 @@
 import UIKit
 
 import CoreLocation
+import JGProgressHUD
 import Kingfisher
+
 
 class OpenWeatherViewController: UIViewController, CommonSetting {
 
@@ -28,22 +30,15 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
     
     
     // MARK: - Propertys
-    let apiManager = OpenWeatherAPIManager.shared
+    let openWeatherAPIManager = OpenWeatherAPIManager.shared
+    let geocodingAPIManager = GeocodingAPIManager.shared
     
     let locationManager = CLLocationManager()
+    
+    let hud = JGProgressHUD(style: .dark)
 
     var userLocation: (lat: Double, lon: Double)? {
-        didSet {
-            if let userLocation = userLocation {
-                apiManager.requestOpenWeather(lat: userLocation.lat, lon: userLocation.lon) { [weak self] weather in
-                    self?.updateUI(with: weather)
-                }
-            }else {
-                apiManager.requestOpenWeather(lat: defaultLocation.lat, lon: defaultLocation.lon) { [weak self] weather in
-                    self?.updateUI(with: weather)
-                }
-            }
-        }
+        didSet { reloadData() }
     }
     
     let defaultLocation = (lat: 37.517829, lon: 126.886270)
@@ -62,10 +57,6 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
         super.viewDidLoad()
         
         configureInitialUI()
-        
-        apiManager.requestOpenWeather(lat: defaultLocation.lat, lon: defaultLocation.lon) { weader in
-            dump(weader)
-        }
     }
     
     
@@ -102,6 +93,30 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
     }
     
     
+    func reloadData() {
+        hud.show(in: self.view, animated: true)
+        if let userLocation = userLocation {
+            openWeatherAPIManager.requestOpenWeather(lat: userLocation.lat, lon: userLocation.lon) { [weak self] weather in
+                guard let self = self else { return }
+                self.updateUI(with: weather)
+                self.geocodingAPIManager.requestGeocoding(lat: userLocation.lat, lon: userLocation.lon) { city in
+                    self.currentLocationLabel.text = city
+                    self.hud.dismiss(animated: true)
+                }
+            }
+        }else {
+            openWeatherAPIManager.requestOpenWeather(lat: defaultLocation.lat, lon: defaultLocation.lon) { [weak self] weather in
+                guard let self = self else { return }
+                self.updateUI(with: weather)
+                self.geocodingAPIManager.requestGeocoding(lat: self.defaultLocation.lat, lon: self.defaultLocation.lon) { city in
+                    self.currentLocationLabel.text = city
+                    self.hud.dismiss(animated: true)
+                }
+            }
+        }
+    }
+    
+    
     func updateUI(with weather: Weather) {
         tempLabel.text = "지금은 \(weather.temp)℃에요"
         humidityLabel.text = "\(weather.humidity)% 만큼 습해요"
@@ -109,6 +124,12 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
         let url = URL(string: EndPoint.openWeatherIconEndPoint + weather.icon + "@2x.png")
         weatherImage.kf.setImage(with: url)
     }
+    
+    
+    @IBAction func reloadButtonTapped(_ sender: UIButton) {
+        checkUserDeviceLocationServiceAuthorization()
+    }
+    
 }
 
 
@@ -160,7 +181,9 @@ extension OpenWeatherViewController {
                 UIApplication.shared.open(appSetting)
             }
         }
-        let cancel = UIAlertAction(title: "취소", style: .default)
+        let cancel = UIAlertAction(title: "취소", style: .default) { [weak self] _ in
+            self?.reloadData()
+        }
         requestLocationServiceAlert.addAction(cancel)
         requestLocationServiceAlert.addAction(goSetting)
         

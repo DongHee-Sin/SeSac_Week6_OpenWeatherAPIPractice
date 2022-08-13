@@ -16,7 +16,7 @@ typealias OpenWeatherCompletionHandler = (Weather) -> Void
 
 
 struct Weather {
-    let temp: Double
+    let temp: Int
     let humidity: Int
     let windSpeed: Double
     let icon: String
@@ -34,7 +34,6 @@ class OpenWeatherAPIManager {
         
         let url = EndPoint.openWeatherEndPoint
         
-        // HTTP Body : 실질적인 데이터 > Dictionary 형태로 입력
         let parameter: Parameters = [
             "lat": "\(lat)",
             "lon": "\(lon)",
@@ -52,7 +51,7 @@ class OpenWeatherAPIManager {
                     return
                 }
 
-                let tmep = json["main"]["temp"].doubleValue - 273.15
+                let tmep = Int(json["main"]["temp"].doubleValue - 273.15)
                 let humidity = json["main"]["humidity"].intValue
                 let wind = json["wind"]["speed"].doubleValue
                 let icon = json["weather"][0]["icon"].stringValue
