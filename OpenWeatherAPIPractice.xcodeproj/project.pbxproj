@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		D073AA5428A7682900DFABDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA5328A7682900DFABDD /* AppDelegate.swift */; };
 		D073AA5628A7682900DFABDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA5528A7682900DFABDD /* SceneDelegate.swift */; };
-		D073AA5828A7682900DFABDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA5728A7682900DFABDD /* ViewController.swift */; };
 		D073AA5B28A7682900DFABDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D073AA5928A7682900DFABDD /* Main.storyboard */; };
 		D073AA5D28A7682A00DFABDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D073AA5C28A7682A00DFABDD /* Assets.xcassets */; };
 		D073AA6028A7682A00DFABDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D073AA5E28A7682A00DFABDD /* LaunchScreen.storyboard */; };
+		D073AA6928A76A8100DFABDD /* OpenWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA6828A76A8100DFABDD /* OpenWeatherViewController.swift */; };
+		D073AA6C28A76ABE00DFABDD /* CommonSettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA6B28A76ABE00DFABDD /* CommonSettingProtocol.swift */; };
+		D073AA7128A76E9100DFABDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D073AA7028A76E9100DFABDD /* .gitignore */; };
+		D073AA7528A76EBF00DFABDD /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA7428A76EBF00DFABDD /* APIKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D073AA5028A7682900DFABDD /* OpenWeatherAPIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeatherAPIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D073AA5328A7682900DFABDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D073AA5528A7682900DFABDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D073AA5728A7682900DFABDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D073AA5A28A7682900DFABDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D073AA5C28A7682A00DFABDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D073AA5F28A7682A00DFABDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D073AA6128A7682A00DFABDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D073AA6828A76A8100DFABDD /* OpenWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherViewController.swift; sourceTree = "<group>"; };
+		D073AA6B28A76ABE00DFABDD /* CommonSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSettingProtocol.swift; sourceTree = "<group>"; };
+		D073AA7028A76E9100DFABDD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D073AA7428A76EBF00DFABDD /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 		D073AA4728A7682900DFABDD = {
 			isa = PBXGroup;
 			children = (
+				D073AA7028A76E9100DFABDD /* .gitignore */,
 				D073AA5228A7682900DFABDD /* OpenWeatherAPIPractice */,
 				D073AA5128A7682900DFABDD /* Products */,
 			);
@@ -56,15 +63,33 @@
 		D073AA5228A7682900DFABDD /* OpenWeatherAPIPractice */ = {
 			isa = PBXGroup;
 			children = (
-				D073AA5328A7682900DFABDD /* AppDelegate.swift */,
-				D073AA5528A7682900DFABDD /* SceneDelegate.swift */,
-				D073AA5728A7682900DFABDD /* ViewController.swift */,
+				D073AA6A28A76A9900DFABDD /* Protocol */,
+				D073AA6728A76A0200DFABDD /* APP */,
 				D073AA5928A7682900DFABDD /* Main.storyboard */,
+				D073AA6828A76A8100DFABDD /* OpenWeatherViewController.swift */,
 				D073AA5C28A7682A00DFABDD /* Assets.xcassets */,
 				D073AA5E28A7682A00DFABDD /* LaunchScreen.storyboard */,
 				D073AA6128A7682A00DFABDD /* Info.plist */,
+				D073AA7428A76EBF00DFABDD /* APIKeys.swift */,
 			);
 			path = OpenWeatherAPIPractice;
+			sourceTree = "<group>";
+		};
+		D073AA6728A76A0200DFABDD /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				D073AA5328A7682900DFABDD /* AppDelegate.swift */,
+				D073AA5528A7682900DFABDD /* SceneDelegate.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		D073AA6A28A76A9900DFABDD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D073AA6B28A76ABE00DFABDD /* CommonSettingProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D073AA7128A76E9100DFABDD /* .gitignore in Resources */,
 				D073AA6028A7682A00DFABDD /* LaunchScreen.storyboard in Resources */,
 				D073AA5D28A7682A00DFABDD /* Assets.xcassets in Resources */,
 				D073AA5B28A7682900DFABDD /* Main.storyboard in Resources */,
@@ -138,9 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D073AA5828A7682900DFABDD /* ViewController.swift in Sources */,
 				D073AA5428A7682900DFABDD /* AppDelegate.swift in Sources */,
+				D073AA7528A76EBF00DFABDD /* APIKeys.swift in Sources */,
 				D073AA5628A7682900DFABDD /* SceneDelegate.swift in Sources */,
+				D073AA6928A76A8100DFABDD /* OpenWeatherViewController.swift in Sources */,
+				D073AA6C28A76ABE00DFABDD /* CommonSettingProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
