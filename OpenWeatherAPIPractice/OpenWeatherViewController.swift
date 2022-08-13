@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import CoreLocation
+import Kingfisher
 
 class OpenWeatherViewController: UIViewController, CommonSetting {
 
@@ -34,11 +36,11 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
         didSet {
             if let userLocation = userLocation {
                 apiManager.requestOpenWeather(lat: userLocation.lat, lon: userLocation.lon) { [weak self] weather in
-                    self?.updateLabel(with: weather)
+                    self?.updateUI(with: weather)
                 }
             }else {
                 apiManager.requestOpenWeather(lat: defaultLocation.lat, lon: defaultLocation.lon) { [weak self] weather in
-                    self?.updateLabel(with: weather)
+                    self?.updateUI(with: weather)
                 }
             }
         }
@@ -100,10 +102,12 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
     }
     
     
-    func updateLabel(with weather: Weather) {
-        tempLabel.text = "지금은 \(weather.temp)에요"
+    func updateUI(with weather: Weather) {
+        tempLabel.text = "지금은 \(weather.temp)℃에요"
         humidityLabel.text = "\(weather.humidity)% 만큼 습해요"
         windLabel.text = "\(weather.windSpeed)m/s의 바람이 불어요"
+        let url = URL(string: EndPoint.openWeatherIconEndPoint + weather.icon + "@2x.png")
+        weatherImage.kf.setImage(with: url)
     }
 }
 

@@ -93,8 +93,8 @@
                                     <constraint firstItem="7Cq-wW-qdR" firstAttribute="leading" secondItem="Bjp-LW-clm" secondAttribute="trailing" constant="24" id="xOB-Hg-0dC"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQC-JL-8uH" customClass="PaddingLabel" customModule="OpenWeatherAPIPractice" customModuleProvider="target">
-                                <rect key="frame" x="20" y="159" width="65.5" height="44.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQC-JL-8uH" customClass="PaddingLabel" customModule="OpenWeatherAPIPractice" customModuleProvider="target">
+                                <rect key="frame" x="20" y="159" width="24" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -114,8 +114,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJo-pl-9XH" customClass="PaddingLabel" customModule="OpenWeatherAPIPractice" customModuleProvider="target">
-                                <rect key="frame" x="20" y="223.5" width="65.5" height="44.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJo-pl-9XH" customClass="PaddingLabel" customModule="OpenWeatherAPIPractice" customModuleProvider="target">
+                                <rect key="frame" x="20" y="203" width="24" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -135,8 +135,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTu-U8-ZOt" customClass="PaddingLabel" customModule="OpenWeatherAPIPractice" customModuleProvider="target">
-                                <rect key="frame" x="20" y="288" width="65.5" height="44.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTu-U8-ZOt" customClass="PaddingLabel" customModule="OpenWeatherAPIPractice" customModuleProvider="target">
+                                <rect key="frame" x="20" y="247" width="24" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -157,14 +157,14 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PeP-n9-Kpg">
-                                <rect key="frame" x="20" y="352.5" width="207" height="138"/>
+                                <rect key="frame" x="20" y="291" width="207" height="138"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PeP-n9-Kpg" secondAttribute="height" multiplier="3:2" id="Ci8-BA-eeW"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘도 행복한 하루 보내세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0o-92-J2z" customClass="PaddingLabel" customModule="OpenWeatherAPIPractice" customModuleProvider="target">
-                                <rect key="frame" x="20" y="510.5" width="214" height="44.5"/>
+                                <rect key="frame" x="20" y="449" width="214" height="44.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -228,16 +228,16 @@
     </scenes>
     <designables>
         <designable name="DTu-U8-ZOt">
-            <size key="intrinsicContentSize" width="65.5" height="44.5"/>
+            <size key="intrinsicContentSize" width="24" height="24"/>
         </designable>
         <designable name="GJo-pl-9XH">
-            <size key="intrinsicContentSize" width="65.5" height="44.5"/>
+            <size key="intrinsicContentSize" width="24" height="24"/>
         </designable>
         <designable name="l0o-92-J2z">
             <size key="intrinsicContentSize" width="214" height="44.5"/>
         </designable>
         <designable name="vQC-JL-8uH">
-            <size key="intrinsicContentSize" width="65.5" height="44.5"/>
+            <size key="intrinsicContentSize" width="24" height="24"/>
         </designable>
     </designables>
     <resources>

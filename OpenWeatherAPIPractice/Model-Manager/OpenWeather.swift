@@ -19,6 +19,7 @@ struct Weather {
     let temp: Double
     let humidity: Int
     let windSpeed: Double
+    let icon: String
 }
 
 
@@ -51,11 +52,12 @@ class OpenWeatherAPIManager {
                     return
                 }
 
-                let tmep = json["main"]["temp"].doubleValue
+                let tmep = json["main"]["temp"].doubleValue - 273.15
                 let humidity = json["main"]["humidity"].intValue
                 let wind = json["wind"]["speed"].doubleValue
+                let icon = json["weather"][0]["icon"].stringValue
                 
-                completion(Weather(temp: tmep, humidity: humidity, windSpeed: wind))
+                completion(Weather(temp: tmep, humidity: humidity, windSpeed: wind, icon: icon))
                 
             case .failure(let error):
                 print(error)

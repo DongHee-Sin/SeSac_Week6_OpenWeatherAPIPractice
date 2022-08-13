@@ -9,4 +9,6 @@ import Foundation
 
 enum EndPoint {
     static let openWeatherEndPoint = "https://api.openweathermap.org/data/2.5/weather"
+    
+    static let openWeatherIconEndPoint = "https://openweathermap.org/img/wn/"
 }
