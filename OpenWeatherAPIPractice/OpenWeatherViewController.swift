@@ -11,7 +11,17 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
 
     static let identifier = String(describing: OpenWeatherViewController.self)
     
-
+    // MARK: - Propertys & Outlet
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var currentLocationLabel: UILabel!
+    
+    @IBOutlet weak var tempLabel: PaddingLabel!
+    @IBOutlet weak var humidityLabel: PaddingLabel!
+    @IBOutlet weak var windLabel: PaddingLabel!
+    
+    @IBOutlet weak var weatherImage: UIImageView!
+    
+    
     
     // MARK: - View Did Load
     override func viewDidLoad() {

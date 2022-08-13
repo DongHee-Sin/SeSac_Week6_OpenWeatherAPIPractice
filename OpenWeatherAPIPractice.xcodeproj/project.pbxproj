@@ -16,6 +16,7 @@
 		D073AA6C28A76ABE00DFABDD /* CommonSettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA6B28A76ABE00DFABDD /* CommonSettingProtocol.swift */; };
 		D073AA7128A76E9100DFABDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D073AA7028A76E9100DFABDD /* .gitignore */; };
 		D073AA7528A76EBF00DFABDD /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA7428A76EBF00DFABDD /* APIKeys.swift */; };
+		D073AA7728A7792900DFABDD /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073AA7628A7792900DFABDD /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D073AA6B28A76ABE00DFABDD /* CommonSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSettingProtocol.swift; sourceTree = "<group>"; };
 		D073AA7028A76E9100DFABDD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D073AA7428A76EBF00DFABDD /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		D073AA7628A7792900DFABDD /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				D073AA5C28A7682A00DFABDD /* Assets.xcassets */,
 				D073AA5E28A7682A00DFABDD /* LaunchScreen.storyboard */,
 				D073AA6128A7682A00DFABDD /* Info.plist */,
+				D073AA7828A7792C00DFABDD /* CustomClass */,
 				D073AA7428A76EBF00DFABDD /* APIKeys.swift */,
 			);
 			path = OpenWeatherAPIPractice;
@@ -90,6 +93,14 @@
 				D073AA6B28A76ABE00DFABDD /* CommonSettingProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D073AA7828A7792C00DFABDD /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				D073AA7628A7792900DFABDD /* PaddingLabel.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D073AA7728A7792900DFABDD /* PaddingLabel.swift in Sources */,
 				D073AA5428A7682900DFABDD /* AppDelegate.swift in Sources */,
 				D073AA7528A76EBF00DFABDD /* APIKeys.swift in Sources */,
 				D073AA5628A7682900DFABDD /* SceneDelegate.swift in Sources */,
@@ -315,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PW2RLJT734;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenWeatherAPIPractice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -342,6 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PW2RLJT734;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OpenWeatherAPIPractice/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
