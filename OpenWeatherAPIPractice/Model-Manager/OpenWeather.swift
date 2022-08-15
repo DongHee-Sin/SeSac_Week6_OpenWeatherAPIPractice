@@ -24,11 +24,7 @@ struct Weather {
 
 
 
-class OpenWeatherAPIManager {
-    
-    static let shared = OpenWeatherAPIManager()
-    private init() {}
-    
+struct OpenWeatherAPIManager {    
     
     func requestOpenWeather(lat: Double, lon: Double, completion: @escaping OpenWeatherCompletionHandler) {
         

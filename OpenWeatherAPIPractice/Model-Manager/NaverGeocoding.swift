@@ -14,11 +14,7 @@ import SwiftyJSON
 typealias GeocodingCompletionHandler = (String) -> Void
 
 
-class GeocodingAPIManager {
-    
-    static let shared = GeocodingAPIManager()
-    private init() {}
-    
+struct GeocodingAPIManager {
     
     func requestGeocoding(lat: Double, lon: Double, completion: @escaping GeocodingCompletionHandler) {
         let url = EndPoint.naverReverseGeocodingEndPoint
@@ -43,7 +39,7 @@ class GeocodingAPIManager {
                 }
 
                 let location = "\(json["documents"][0]["address"]["region_1depth_name"].stringValue) \(json["documents"][0]["address"]["region_2depth_name"].stringValue)"
-                print(json)
+
                 completion(location)
                 
             case .failure(let error):

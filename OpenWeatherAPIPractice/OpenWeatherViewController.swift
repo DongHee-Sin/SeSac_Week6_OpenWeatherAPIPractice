@@ -30,8 +30,8 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
     
     
     // MARK: - Propertys
-    let openWeatherAPIManager = OpenWeatherAPIManager.shared
-    let geocodingAPIManager = GeocodingAPIManager.shared
+    let openWeatherAPIManager = OpenWeatherAPIManager()
+    let geocodingAPIManager = GeocodingAPIManager()
     
     let locationManager = CLLocationManager()
     
@@ -74,25 +74,33 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
         setRadius(view: weatherImage)
         
         setDateFormatter()
-        updateDateLabel()
+        startDateLabelUpdateTimer()
     }
-    
-    
-    func setDateFormatter() {
-        dateFormatter.dateFormat = "MM월 dd일 hh시 mm분"
-    }
-    
-    
-    func updateDateLabel() {
-        dateLabel.text = currentDateString
-    }
-    
     
     func setRadius(view: UIView) {
         view.layer.cornerRadius = 8
     }
     
     
+    
+    // DATE
+    func setDateFormatter() {
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "MM월 dd일 hh:mm (E)"
+    }
+    
+    func startDateLabelUpdateTimer() {
+        updateDateLabel()
+        Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(updateDateLabel), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateDateLabel() {
+        dateLabel.text = currentDateString
+    }
+    
+    
+    
+    // WEATHER
     func reloadData() {
         hud.show(in: self.view, animated: true)
         if let userLocation = userLocation {
@@ -123,6 +131,8 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
         windLabel.text = "\(weather.windSpeed)m/s의 바람이 불어요"
         let url = URL(string: EndPoint.openWeatherIconEndPoint + weather.icon + "@2x.png")
         weatherImage.kf.setImage(with: url)
+        
+        [tempLabel, humidityLabel, windLabel, weatherImage, commentLabel].forEach { $0?.isHidden = false }
     }
     
     
