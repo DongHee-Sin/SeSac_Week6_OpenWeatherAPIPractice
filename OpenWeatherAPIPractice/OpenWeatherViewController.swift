@@ -38,7 +38,9 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
     let hud = JGProgressHUD(style: .dark)
 
     var userLocation: (lat: Double, lon: Double)? {
-        didSet { reloadData() }
+        didSet {
+            async { await reloadData() }
+        }
     }
     
     let defaultLocation = (lat: 37.517829, lon: 126.886270)
@@ -101,26 +103,31 @@ class OpenWeatherViewController: UIViewController, CommonSetting {
     
     
     // WEATHER
-    func reloadData() {
+    func reloadData() async -> Void {
         hud.show(in: self.view, animated: true)
-        if let userLocation = userLocation {
-            openWeatherAPIManager.requestOpenWeather(lat: userLocation.lat, lon: userLocation.lon) { [weak self] weather in
-                guard let self = self else { return }
-                self.updateUI(with: weather)
-                self.geocodingAPIManager.requestGeocoding(lat: userLocation.lat, lon: userLocation.lon) { city in
-                    self.currentLocationLabel.text = city
-                    self.hud.dismiss(animated: true)
-                }
-            }
-        }else {
-            openWeatherAPIManager.requestOpenWeather(lat: defaultLocation.lat, lon: defaultLocation.lon) { [weak self] weather in
-                guard let self = self else { return }
-                self.updateUI(with: weather)
-                self.geocodingAPIManager.requestGeocoding(lat: self.defaultLocation.lat, lon: self.defaultLocation.lon) { city in
-                    self.currentLocationLabel.text = city
-                    self.hud.dismiss(animated: true)
-                }
-            }
+        
+        await requestOpenWeather()
+        await requestGeocoding()
+        
+        hud.dismiss(animated: true)
+    }
+    
+    
+    func requestOpenWeather() async -> Void {
+        let location = userLocation ?? defaultLocation
+
+        openWeatherAPIManager.requestOpenWeather(lat: location.lat, lon: location.lon) { [weak self] weather in
+            guard let self = self else { return }
+            self.updateUI(with: weather)
+        }
+    }
+    
+    
+    func requestGeocoding() async -> Void {
+        let location = userLocation ?? defaultLocation
+
+        self.geocodingAPIManager.requestGeocoding(lat: location.lat, lon: location.lon) { city in
+            self.currentLocationLabel.text = city
         }
     }
     
@@ -192,7 +199,7 @@ extension OpenWeatherViewController {
             }
         }
         let cancel = UIAlertAction(title: "취소", style: .default) { [weak self] _ in
-            self?.reloadData()
+            async { await self?.reloadData() }
         }
         requestLocationServiceAlert.addAction(cancel)
         requestLocationServiceAlert.addAction(goSetting)
